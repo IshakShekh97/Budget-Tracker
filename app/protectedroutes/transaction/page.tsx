@@ -16,27 +16,27 @@ const Transactionpage = () => {
   return (
     <>
       <div className="border-b backdrop-blur-[3px] backdrop-brightness-200 backdrop-saturate-200">
-        <div className="container flex justify-between items-center gap-6 py-8">
-          <div className="">
-            <p className="text-3xl font-bold">Transactions History</p>
-          </div>
-          <DateRangePicker
-            initialDateFrom={dateRange.from}
-            initialDateTo={dateRange.to}
-            showCompare={false}
-            onUpdate={(values) => {
-              const { from, to } = values.range;
+        <div className="container flex justify-between flex-wrap items-end gap-6 py-8">
+          <h2 className="text-3xl font-bold">Transactions History</h2>
+          <div className="flex items-center gap-3">
+            <DateRangePicker
+              initialDateFrom={dateRange.from}
+              initialDateTo={dateRange.to}
+              showCompare={false}
+              onUpdate={(values) => {
+                const { from, to } = values.range;
 
-              if (!from || !to) return;
-              if (differenceInDays(to, from) > MAX_DATE_RANGE_DAYS) {
-                toast.error(
-                  `Date range is too big!, Max Allowed Range is ${MAX_DATE_RANGE_DAYS} days`
-                );
-                return;
-              }
-              setDateRange({ from, to });
-            }}
-          />
+                if (!from || !to) return;
+                if (differenceInDays(to, from) > MAX_DATE_RANGE_DAYS) {
+                  toast.error(
+                    `Date range is too big!, Max Allowed Range is ${MAX_DATE_RANGE_DAYS} days`
+                  );
+                  return;
+                }
+                setDateRange({ from, to });
+              }}
+            />
+          </div>
         </div>
       </div>
 
