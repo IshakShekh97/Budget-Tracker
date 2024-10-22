@@ -8,7 +8,7 @@ const page = () => {
     <>
       <div className="w-full h-screen flex flex-col justify-center items-center ">
         <div className=" bg-gradient-to-t from-amber-400 to bg-orange-700 bg-clip-text text-transparent pb-5 flex flex-col items-center justify-center">
-          <p className="text-7xl max-sm:text-4xl font-bold">Budget Tracker</p>
+          <p className="text-7xl max-sm:text-4xl font-bold">Budget Tracking</p>
           <p className="text-lg max-sm:text-base my-5 font-semibold">
             A handy Budget tracker Tool
           </p>
